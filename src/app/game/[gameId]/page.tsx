@@ -87,6 +87,7 @@ export default function Game({
               }
             }}
             onFlipComplete={(card): void => {
+              console.log(card.type);
               switch (card.type) {
                 case CardType.EMPTY:
                   return sounds.playRevealEmptySound();

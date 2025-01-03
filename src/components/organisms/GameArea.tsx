@@ -35,11 +35,11 @@ function GameArea({ game, gameOverReason, player, onCardClick }: Props) {
   const roundsRemainingMessage =
     nRemainingRounds === 1 ? (
       <>
-        <strong>1 round</strong> after this one
+        <strong>1 rodada</strong> restante
       </>
     ) : (
       <>
-        <strong>{nRemainingRounds} rounds</strong> after this one
+        <strong>{nRemainingRounds} rodadas</strong> restantes
       </>
     );
 
@@ -51,23 +51,23 @@ function GameArea({ game, gameOverReason, player, onCardClick }: Props) {
       ? "Os aventureiros venceram!"
       : "Os guardiões venceram!"
     : isKeyholder
-      ? "Você tem a chave."
-      : `${keyholder.name} tem a chave.`;
+      ? "Você tem a chave"
+      : `${keyholder.name} tem a chave`;
 
   const subheadlineMessage = gameOverReason ? (
     gameOverReason + "!"
   ) : getIsRoundComplete(game) ? (
     player.isHost ? (
-      "Por favor incie a próxima rodada."
+      "Por favor incie a próxima rodada"
     ) : (
-      "Aguardando início da próxima rodada."
+      "Aguardando início da próxima rodada"
     )
   ) : (
     <>
       <strong>
-        {cardsLeftToFlip} flip{cardsLeftToFlip === 1 ? "" : "s"}
+        {cardsLeftToFlip} jogada{cardsLeftToFlip === 1 ? "" : "s"}
       </strong>{" "}
-      left this round, {roundsRemainingMessage}.
+      restantes nessa rodada, {roundsRemainingMessage}.
     </>
   );
 
@@ -75,18 +75,21 @@ function GameArea({ game, gameOverReason, player, onCardClick }: Props) {
     <>
       <div style={{ width: "100%", paddingBottom: "5px" }}>
         <div>
+          <span className="font-semibold">{player.name}</span>:{" "}
+          <span>{player.role}</span>
           <p>
             <strong>{headlineMessage}</strong>
           </p>
           <p style={{ marginBottom: 0 }}>{subheadlineMessage}</p>
           {!gameOverReason && (
             <p style={{ marginTop: 0 }}>
-              Still hidden: <strong>{nGold} gold</strong> and{" "}
-              <strong>{nFire} fire</strong>.
+              Oculto: <strong>{nGold} tesouro</strong> e{" "}
+              <strong>{nFire} armadilha</strong>
             </p>
           )}
         </div>
       </div>
+
       <div style={{ width: "100%", overflowY: "scroll" }}>
         {Object.entries(otherPlayerCards).map(([playerId, cards]) => (
           <PlayerCards

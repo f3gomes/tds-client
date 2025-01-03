@@ -14,7 +14,8 @@ function OwnCards({ cards, isKeyholder, player }: Props) {
     <>
       <PlayerCards cards={cards} player={player} isKeyholder={isKeyholder} />
 
-      <span style={{ marginRight: "5px" }}>Suas cartas:</span>
+      <span>Suas cartas:</span>
+
       <div className="flex">
         {Object.values(CardType).map((cardType) => (
           <CardPreview

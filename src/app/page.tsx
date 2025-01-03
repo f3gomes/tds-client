@@ -20,21 +20,19 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingGame, setIsLoadingGame] = useState(false);
 
-  console.log(isLoading);
-
   useSocketListener(ServerEvent.GAME_CREATED, (data) => {
     history.push(`/game/${data.id}`);
   });
 
-  const handleNewGame = () => {
+  const handleNewGame = async () => {
     setIsLoadingGame(true);
 
-    try {
-      const data: CreateGameEvent = {
-        socketId: socket.id,
-      };
+    const data: CreateGameEvent = {
+      socketId: socket.id,
+    };
 
-      socket.emit(ClientEvent.CREATE_GAME, data);
+    try {
+      await socket.emit(ClientEvent.CREATE_GAME, data);
     } catch (error) {
       console.log(error);
     } finally {

@@ -37,3 +37,7 @@ body {
   min-width: min(1000px, calc(100vw - 20px));
   max-width: 1000px;
 }
+
+.btn-default {
+  @apply bg-white text-black px-4 py-1 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 hover:shadow-md transition-all duration-200;
+}

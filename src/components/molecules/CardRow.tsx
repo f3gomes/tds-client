@@ -9,7 +9,7 @@ interface Props {
 
 function CardRow({ cards, style, onCardClick }: Props) {
   return (
-    <div style={{ display: "flex", justifyContent: "space-around", ...style }}>
+    <div style={{ ...style }} className="flex justify-center gap-12">
       {cards.map((card, idx) => (
         <CardItem
           key={card.id}

@@ -31,10 +31,6 @@ enum SectionView {
   MAIN_GAME = "main-game",
 }
 
-const ActionArea = styled.div`
-  width: 100%;
-`;
-
 const Container = styled.div`
   width: 100%;
 `;
@@ -108,6 +104,7 @@ function GameOngoing({
         onClose={handleCloseModal}
         onFlipComplete={onFlipComplete}
       />
+
       {view === SectionView.DISTRIBUTION && (
         <GameDistribution
           player={player}
@@ -116,6 +113,7 @@ function GameOngoing({
           onGameReset={onGameRestart}
         />
       )}
+
       {view === SectionView.GAME_STATS && (
         <GameStats
           game={game}
@@ -125,6 +123,7 @@ function GameOngoing({
           gameOverReason={gameOverReason}
         />
       )}
+
       {view === SectionView.MAIN_GAME && (
         <>
           <GameArea
@@ -134,36 +133,33 @@ function GameOngoing({
               isRoundComplete
                 ? () =>
                   window.alert(
-                    "This round is complete - the host needs to start the next round first"
+                    "Essa rodada acabou - aguarde o host iniciar a próxima rodada"
                   )
                 : onCardClick
             }
+
             gameOverReason={gameOverReason}
           />
-          <ActionArea>
-            <hr />
+          <div className="flex flex-col gap-2">
+            <hr className="my-4" />
             <OwnCards
               cards={ownCards}
               player={player}
               isKeyholder={isKeyholder}
             />
-            <button onClick={() => setView(SectionView.GAME_STATS)}>
-              Game stats
-            </button>
-            <button
-              color="black"
-              onClick={() => setView(SectionView.DISTRIBUTION)}
-            >
-              Setup and role
-            </button>
-            <button
-              color="green"
-              disabled={!(player.isHost && (isRoundComplete || gameOverReason))}
-              onClick={handleProgression}
-            >
-              {gameOverReason ? "New game" : "Next round"}
-            </button>
-          </ActionArea>
+
+            <div className="flex gap-2 my-4">
+              <button
+                onClick={handleProgression}
+                disabled={
+                  !(player.isHost && (isRoundComplete || gameOverReason))
+                }
+                className="btn-default"
+              >
+                {gameOverReason ? "Novo Jogo" : "Próxima Rodada"}
+              </button>
+            </div>
+          </div>
         </>
       )}
     </Container>

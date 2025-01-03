@@ -1,30 +1,22 @@
 import Image from "next/image";
-import { Role } from "../../types/game.types";
 
 interface Props {
-  role: Role;
+  role: string;
 }
 
 function RoleOverview({ role }: Props) {
   return (
     <>
-      <p style={{ marginBottom: 0 }}>Você será...</p>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
+      <p>Você é...</p>
+      <div className="flex justify-center flex-col items-center">
         <Image
           width={195}
           height={300}
           alt="asset"
-          src={`/assets/tds-${role === Role.ADVENTURER ? "adventurer" : "guardian"
-            }.jpeg`}
+          src={`/assets/tds-${role.toLowerCase()}.jpeg`}
         />
-        <p style={{ fontSize: "1.5rem" }}>{role}</p>
+
+        <p className="text-2xl">{role}</p>
       </div>
     </>
   );
