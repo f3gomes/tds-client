@@ -4,22 +4,8 @@ function GameRules() {
       <h1>Rules</h1>
 
       <div>
-        <blockquote>
-          <p>
-            🇩🇪 <span>Tempel des Schreckens</span> has official rules that only
-            exist in German - so my understanding of the game is significantly
-            indebted to{" "}
-            <a href="https://boardgamegeek.com/filepage/139993/tempel-des-schreckens-unofficial-rules-english">
-              this unofficial English translation
-            </a>{" "}
-            of the rules.
-          </p>
-        </blockquote>
-      </div>
-
-      <div>
         <p>
-          <strong>Welcome to the Tempel des Schreckens!</strong>
+          <strong>Bem-vindo ao Templo dos Horrores</strong>
         </p>
 
         <img
@@ -30,164 +16,154 @@ function GameRules() {
       </div>
 
       <div>
-        <ul>
-          <li>
-            <a href="#thematic-setup">Thematic setup</a>
-          </li>
-          <li>
-            <a href="#roles-and-win-conditions">Roles and win conditions</a>
-          </li>
-          <li>
-            <a href="#game-mechanics">Game mechanics</a>
-          </li>
-        </ul>
+        <h2 id="tematic-setup"> Configuração Temática </h2>
+
+        <p>
+          Durante décadas, os rumores se espalharam sobre um templo oculto de
+          grande tesouros ... e terrores graves.
+        </p>
+
+        <p>
+          Um grupo impróprio de aventureiros <strong> </strong> tropeçaram Isso
+          - e agora eles estão prontos para saquear por tudo o que vale a pena.
+        </p>
+
+        <p>
+          No entanto, algum templo misterioso <strong> guardiões </strong> foram
+          acordou de seu sono, mexido para proteger os tesouros.
+        </p>
+
+        <p>
+          Os aventureiros podem encontrar todo o ouro do templo no tempo?Ou eles
+          vão ser desviado pelos guardiões - em armadilhas mortais de fogo ou
+          selado dentro do templo para toda a eternidade?
+        </p>
+
+        <h2 id="papéis e condições"> papéis e condições de vitória </h2>
       </div>
 
       <div>
-        <h2 id="thematic-setup">Thematic setup</h2>
+        <h3> Funções e equipes ocultas </h3>
 
         <p>
-          For decades, rumours have spread about a hidden temple of great
-          treasures... and grave terrors.
+          Em <em> tempel des schreckens </em>, {""}
+          <strong> Os papéis são sempre secretos </strong>.Você conhece o seu
+          papel, mas você não conheço o papel de mais ninguém - e você não sabe
+          quem é, ou quem não está, na sua equipe.
         </p>
 
         <p>
-          A foolhardy group of <strong>Adventurers</strong> have stumbled across
-          it - and now they're ready to ransack it for all that it's worth.
+          Mas, como muitos jogos de papel ocultos, há um grande {""}
+          <em> dedução social </em> elemento de tentar identificar quem está em
+          Qual equipe.
         </p>
 
         <p>
-          However, some mysterious Temple <strong>Guardians</strong> have been
-          awoken from their slumber, stirred to protect the treasures within.
-        </p>
-
-        <p>
-          Can the Adventurers find all the temple's gold in time? Or will they
-          be led astray by the Guardians - into deadly traps of fire, or sealed
-          within the temple for all eternity?
-        </p>
-
-        <h2 id="roles-and-win-conditions">Roles and win conditions</h2>
-      </div>
-
-      <div>
-        <h3>Hidden roles and teams</h3>
-
-        <p>
-          In <em>Tempel des Schreckens</em>,{" "}
-          <strong>roles are always secret</strong>. You know your role, but you
-          don't know anybody else's role - and so you don't know who is, or who
-          is not, on your team.
-        </p>
-
-        <p>
-          But, like a lot of hidden role games, there is a large{" "}
-          <em>social deduction</em> element of trying to identify who is on
-          which team.
-        </p>
-
-        <p>
-          There are exactly <strong>two teams</strong>: Adventurers and
-          Guardians.
+          Existem exatamente <strong> duas equipes </strong>: aventureiros e
+          Guardiões.
         </p>
         <ul>
           <li>
-            <em>Teams are in direct competition</em> - every game always has a
-            single winning team.
+            As equipes <em> estão em competição direta </em> - todo jogo sempre
+            tem um equipe vencedora única.
           </li>
           <li>
-            <em>Teammates all win together</em> - you win alongside your fellow
-            Adventurers/Guardians.
+            <em> Os companheiros de equipe vencem juntos </em> - você ganha ao
+            lado do seu companheiro Aventureiros/Guardiões.
           </li>
         </ul>
 
-        <h3>Team win conditions</h3>
+        <h3> Condições de vitória da equipe </h3>
 
         <p>
-          The two teams have different win conditions, which are directly
-          opposed to each other.
+          As duas equipes têm condições de vitória diferentes, que são
+          diretamente oposto um ao outro.
         </p>
 
         <p>
-          The <strong>Adventurer</strong> team wins in only one way: if all of
-          the temple's <strong>Gold</strong> is opened within four rounds.
+          A equipe <strong> aventureiro </strong> ganha apenas de uma maneira:
+          se tudo O Gold <strong> do templo </strong> é aberto em quatro
+          rodadas.
         </p>
 
         <p>
-          The <strong>Guardian</strong> team wins in one of two ways:
+          A equipe <strong> Guardian </strong> vence de uma de duas maneiras:
         </p>
         <ol>
           <li>
-            If four rounds pass to completion <em>without</em> all of the Gold
-            being located; or
+            Se quatro rodadas passarem para a conclusão <em> sem </em> todo o
+            ouro estar localizado;ou
           </li>
           <li>
-            If, at any time, all of the temple's <strong>Fire</strong> traps are
-            opened.
+            Se, a qualquer momento, todas as armadilhas do templo{" "}
+            <strong> </strong>
+            aberto.
           </li>
         </ol>
 
         <p>
-          The exact numbers on each team depends on the number of players, but
-          there are almost always more Adventurers than Guardians.
+          Os números exatos em cada equipe depende do número de jogadores, mas
+          Quase sempre existem mais aventureiros do que guardiões.
         </p>
 
-        <p>Thus, the game ends in three ways:</p>
+        <p> Assim, o jogo termina de três maneiras: </p>
         <ol>
           <li>
-            <em>All Gold has been opened</em> - Adventurers win
+            <em> Todo o ouro foi aberto </em> - os aventureiros vencem
           </li>
           <li>
-            <em>All Fire has been opened</em> - Guardians win
+            <em> Todo o fogo foi aberto </em> - Guardiões vencem
           </li>
           <li>
-            <em>Four rounds are complete</em> - Guardians win
+            <em> quatro rodadas estão completas </em> - Guardiões vencem
           </li>
         </ol>
 
-        <p>There is always a winning team at the end of the game.</p>
+        <p> Sempre há uma equipe vencedora no final do jogo. </p>
       </div>
 
       <div>
-        <h3>Basic team dynamics</h3>
+        <h3> Dinâmica básica da equipe </h3>
 
         <p>
-          Adventurers are in a race against time to find all the Gold before the
-          end of four rounds. They will try to cooperate with other Adventurers
-          and share information to help them locate the Gold.
+          Aventureiros estão em uma corrida contra o tempo para encontrar todo o
+          ouro antes do Fim de quatro rodadas.Eles vão tentar cooperar com
+          outros aventureiros e compartilhe informações para ajudá -los a
+          localizar o ouro.
         </p>
 
         <p>
-          However, remember - roles are secret, and there are some Guardians in
-          the midst!
+          No entanto, lembre -se - os papéis são secretos e há alguns guardiões
+          em o meio!
         </p>
 
         <p>
-          Guardians will typically obstruct this by <em>pretending</em> to be
-          Adventurers, so they can tactically spread misinformation, stop Gold
-          from being opened, and potentially reveal the Fire.
+          Guardiões normalmente obstruirão isso por <em> fingindo </em> ser
+          Aventureiros, para que possam espalhar taticamente informações
+          erradas, param de ouro de ser aberto e potencialmente revelar o fogo.
         </p>
 
         <p>
-          However, if Guardians aren't subtle, Adventurers may be able to{" "}
-          <em>deduce</em> their identity, discount their misinformation and
-          thwart the Guardians' plans.
+          No entanto, se os guardiões não forem sutis, os aventureiros poderão
+          ser capazes de {""}
+          <em> Deduce </em> sua identidade, desconta suas informações erradas e
+          frustrar os planos dos guardiões.
         </p>
 
-        <h2 id="game-mechanics">Game mechanics</h2>
+        <h2 id="mecânica de jogo"> mecânica de jogo </h2>
 
-        <h3>Chamber cards</h3>
+        <h3> Cartões de câmara </h3>
 
         <p>
-          The <em>Tempel des Schreckens</em> is organised into distinct
-          Chambers, each of which is represented by a{" "}
-          <strong>Chamber card</strong>.
+          O <em> tempel des schreckens </em> está organizado em distinto
+          Chambers, cada um dos quais é representado por um {""}
+          <strong> Cartão de câmara </strong>.
         </p>
 
         <p>
-          As the game progresses, the temple gets explored, and more chambers
-          get <em>opened</em> - represented by flipping the card from face-down
-          (unopened) to face-up (opened).
+          À medida que o jogo avança, o templo é explorado e mais câmaras ser{" "}
+          <em> aberto </em>
+          (fechado) para enfrentar (aberto).
         </p>
       </div>
 
@@ -230,39 +206,42 @@ function GameRules() {
       </div>
 
       <div>
-        <p>All unopened chambers look identical.</p>
+        <p> Todas as câmaras fechadas parecem idênticas. </p>
 
         <p>
-          When chambers are opened (flipped), they have three possible things
-          they might reveal:
+          Quando as câmaras são abertas (invertidas), elas têm três coisas
+          possíveis Eles podem revelar:
         </p>
         <ul>
           <li>
-            <strong>Gold</strong>: good news for Adventurers, that's one closer
-            to victory!
+            <strong> ouro </strong>: Boas notícias para aventureiros, isso é
+            mais próximo para a vitória!
           </li>
           <li>
-            <strong>Fire</strong>: bad news for Adventurers, that's one closer
-            to defeat...
+            <strong> incêndio </strong>: más notícias para aventureiros, isso é
+            mais próximo para derrotar ...
           </li>
           <li>
-            <strong>Empty</strong>: neutral-<em>ish</em> for Adventurers, at
-            least it's not fire...
+            <strong> vazio </strong>: neutro- <em> ish </em> para aventureiros,
+            em pelo menos não é fogo ...
           </li>
         </ul>
 
         <p>
-          Whilst empty chambers don't count towards either gold or fire (and so
-          they are neutral-<em>ish</em>), they <em>do</em> count towards the
-          ticking time clock, as discussed in the next section.
+          Enquanto as câmaras vazias não contam para o ouro ou o fogo (e assim
+          eles são neutros- <em> ish </em>), eles <em> fazem </em> contam para o
+          Relógio de tempo, conforme discutido na próxima seção.
         </p>
 
         <p>
-          The exact number of Gold, Fire and Empty chambers in the game depends
-          on the number of players, but it is always the case that{" "}
-          <em>the vast majority of chambers are Empty</em>,{" "}
-          <em>there will be a minority of chambers with Gold</em>, and{" "}
-          <em>there will be extremely few Fire</em> (even fewer than Gold).
+          O número exato de ouro, fogo e câmaras vazias no jogo depende Sobre o
+          número de jogadores, mas é sempre o caso de {""}
+          <em> A grande maioria das câmaras está vazia </em>, {""}
+          <em> Haverá uma minoria de câmaras com ouro </em> e {""}
+          <em>
+            {" "}
+            haverá extremamente poucos incêndios (ainda menos que o ouro).{" "}
+          </em>
         </p>
       </div>
 
@@ -338,7 +317,9 @@ function GameRules() {
           cards has a 2/5 probability of being Gold - but they won't know{" "}
           <em>which</em> face-down Chamber cards <em>is actually</em> Gold.
         </p>
+      </div>
 
+      <div>
         <h4 id="discussion">Discussion</h4>
 
         <p>

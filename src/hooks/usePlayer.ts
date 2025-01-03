@@ -2,8 +2,7 @@ import { useEffect } from "react";
 
 import { bundle, useRiducer } from "riduce";
 
-import { useRouter } from "next/router";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 import { useSocket } from "../../socket";
 import { Player } from "../types/game.types";

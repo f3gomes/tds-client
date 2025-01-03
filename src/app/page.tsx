@@ -17,16 +17,24 @@ export default function Home() {
   const history = useRouter();
 
   const [isLoading, setIsLoading] = useState(true);
+  const [isLoadingGame, setIsLoadingGame] = useState(false);
 
   useSocketListener(ServerEvent.GAME_CREATED, (data) => {
     history.push(`/game/${data.id}`);
   });
 
   const handleNewGame = () => {
-    const data: CreateGameEvent = {
-      socketId: socket.id,
-    };
-    socket.emit(ClientEvent.CREATE_GAME, data);
+    try {
+      setIsLoadingGame(true);
+      const data: CreateGameEvent = {
+        socketId: socket.id,
+      };
+      socket.emit(ClientEvent.CREATE_GAME, data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoadingGame(false);
+    }
   };
 
   const handleJoinGame = () => {
@@ -56,8 +64,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="text-center">
-        <h1>Tempel des Schreckens</h1>
+      <div className="flex flex-col justify-center items-center gap-3">
+        <h1 className="text-3xl">Templo dos Horrores</h1>
 
         <div className="flex justify-center">
           <Image src="/assets/tds-box.png" alt="box" width={494} height={630} />
@@ -74,36 +82,34 @@ export default function Home() {
             </div>
           </>
         ) : (
-          <p style={{ margin: "5%" }}>
-            A quick-play party game that combines cooperative social deduction
-            with bluffing, luck and chance.
+          <p className="text-lg">
+            Um jogo rápido que combina dedução social cooperativa Com blefe,
+            sorte e acaso.
           </p>
         )}
       </div>
 
-      <div className="flex gap-3">
+      <div className="flex gap-3 mt-6">
         <button
           color="black"
           onClick={() => history.push("/rules")}
           className="bg-white text-black px-4 py-1 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 hover:shadow-md transition-all duration-200"
         >
-          RULES
+          Regras
         </button>
 
         <button
-          disabled={isLoading}
           onClick={handleJoinGame}
           className="bg-white text-black px-4 py-1 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 hover:shadow-md transition-all duration-200"
         >
-          JOIN
+          Entrar
         </button>
 
         <button
-          disabled={isLoading}
           onClick={handleNewGame}
           className="bg-white text-black px-4 py-1 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 hover:shadow-md transition-all duration-200"
         >
-          NEW
+          {isLoadingGame ? "Loading..." : "Novo"}
         </button>
       </div>
     </div>

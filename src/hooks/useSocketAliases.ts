@@ -1,20 +1,26 @@
 import { useSocket } from "../../socket";
-import { useEffect } from "react";
-import { useLocalStorage } from "@uidotdev/usehooks";
+import { useEffect, useRef } from "react";
+import { useSessionStorage } from "@uidotdev/usehooks";
 
 function useSocketAliases() {
-  const socket: any = useSocket();
+  const socket = useSocket();
+  const initialized = useRef(false);
 
-  const [socketAliases, setSocketAliases]: any = useLocalStorage(
+  const [socketAliases, setSocketAliases] = useSessionStorage(
     "socketAliases",
-    sessionStorage
+    [] as string[]
   );
 
   useEffect(() => {
-    if (socket && !socketAliases.includes(socket.id)) {
+    if (
+      !initialized.current &&
+      socket.id &&
+      !socketAliases.includes(socket.id)
+    ) {
+      initialized.current = true;
       setSocketAliases([...socketAliases, socket.id]);
     }
-  });
+  }, [socket.id]);
 
   return socketAliases;
 }
