@@ -45,7 +45,7 @@ function CardRevealModal({
     } opening ${flippee} chamber...`;
 
   return (
-    <Modal title="modal" isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose}>
       <div content={header} onClick={onClose} />
       <div onClick={flip.completed ? onClose : undefined}>
         <CardReveal
@@ -90,12 +90,24 @@ function CardReveal({
           minHeight: 0,
         },
       }}
-      back={<Image fill alt="card-back" src="/assets/tds-chamber.jpeg" />}
+      back={
+        <Image
+          width={195}
+          height={300}
+          alt="card-back"
+          src="/assets/tds-chamber.jpeg"
+        />
+      }
       isFlippedUp={isFlipped}
       onClickFront={onClickFront}
       onFlipComplete={onFlipComplete}
       front={
-        <Image fill alt="card-front" src={`/assets/tds-${cardType}.jpeg`} />
+        <Image
+          width={195}
+          height={300}
+          alt="card-front"
+          src={`/assets/tds-${cardType}.jpeg`}
+        />
       }
     />
   );

@@ -12,8 +12,10 @@ interface Props {
 function OwnCards({ cards, isKeyholder, player }: Props) {
   return (
     <>
-      <div style={{ paddingBottom: "5px" }}>
-        <span style={{ marginRight: "5px" }}>Your cards:</span>
+      <PlayerCards cards={cards} player={player} isKeyholder={isKeyholder} />
+
+      <span style={{ marginRight: "5px" }}>Suas cartas:</span>
+      <div className="flex">
         {Object.values(CardType).map((cardType) => (
           <CardPreview
             key={cardType}
@@ -22,7 +24,6 @@ function OwnCards({ cards, isKeyholder, player }: Props) {
           />
         ))}
       </div>
-      <PlayerCards cards={cards} player={player} isKeyholder={isKeyholder} />
     </>
   );
 }

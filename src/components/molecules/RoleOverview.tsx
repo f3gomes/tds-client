@@ -8,7 +8,7 @@ interface Props {
 function RoleOverview({ role }: Props) {
   return (
     <>
-      <p style={{ marginBottom: 0 }}>You have drawn...</p>
+      <p style={{ marginBottom: 0 }}>Você será...</p>
       <div
         style={{
           display: "flex",
@@ -18,7 +18,8 @@ function RoleOverview({ role }: Props) {
         }}
       >
         <Image
-          fill
+          width={195}
+          height={300}
           alt="asset"
           src={`/assets/tds-${role === Role.ADVENTURER ? "adventurer" : "guardian"
             }.jpeg`}

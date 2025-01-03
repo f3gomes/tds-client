@@ -14,6 +14,8 @@ function CardPreview({ cardType, n }: Props) {
       {range.map((n) => (
         <Image
           key={n}
+          width={150}
+          height={230}
           alt={cardType}
           src={`/assets/tds-${cardType}.jpeg`}
           className={cn(

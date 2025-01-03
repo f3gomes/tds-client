@@ -16,8 +16,8 @@ export enum CardType {
 }
 
 export enum Role {
-  ADVENTURER = "ADVENTURER",
-  GUARDIAN = "GUARDIAN",
+  ADVENTURER = "AVENTUREIRO",
+  GUARDIAN = "GUARDIÃO",
 }
 
 export interface Card {

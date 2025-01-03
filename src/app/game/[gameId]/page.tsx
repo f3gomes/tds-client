@@ -66,7 +66,7 @@ export default function Game({
   } else {
     return (
       <>
-        {game.loading && <p>Loading...</p>}
+        {game.loading && <p>Carregando...</p>}
         {game.data && player.data && (
           <GamePage
             game={game.data}

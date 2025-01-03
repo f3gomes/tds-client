@@ -76,7 +76,7 @@ export default function Home() {
             <div>
               <div>Icon loading</div>
               <div>
-                <div>Loading...</div>
+                <div>Carregando...</div>
                 <p>This can be 30-40s on first boot. Thanks for waiting!</p>
               </div>
             </div>
@@ -91,25 +91,18 @@ export default function Home() {
 
       <div className="flex gap-3 mt-6">
         <button
+          onClick={handleNewGame}
+          className="bg-white text-black px-4 py-1 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 hover:shadow-md transition-all duration-200"
+        >
+          {isLoadingGame ? "Carregando..." : "Jogar"}
+        </button>
+
+        <button
           color="black"
           onClick={() => history.push("/rules")}
           className="bg-white text-black px-4 py-1 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 hover:shadow-md transition-all duration-200"
         >
           Regras
-        </button>
-
-        <button
-          onClick={handleJoinGame}
-          className="bg-white text-black px-4 py-1 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 hover:shadow-md transition-all duration-200"
-        >
-          Entrar
-        </button>
-
-        <button
-          onClick={handleNewGame}
-          className="bg-white text-black px-4 py-1 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 hover:shadow-md transition-all duration-200"
-        >
-          {isLoadingGame ? "Loading..." : "Novo"}
         </button>
       </div>
     </div>

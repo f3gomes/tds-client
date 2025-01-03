@@ -13,7 +13,7 @@ function SetupOverview({ nPlayers }: Props) {
 
   return (
     <div>
-      <p>With {nPlayers} players, the distribution is:</p>
+      <p>Com {nPlayers} jogadores, a distribuição é:</p>
       <div style={{ display: "flex", justifyContent: "space-around" }}>
         <CardOverview slug="adventurer" count={roleRange(nAdventurers)} />
         <CardOverview slug="guardian" count={roleRange(nGuardians)} />
@@ -33,15 +33,13 @@ export function CardOverview({
   slug: string;
 }) {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <Image src={`/assets/tds-${slug}.jpeg`} fill alt="asset" />
+    <div className="flex flex-col items-center justify-center mt-4">
+      <Image
+        alt="asset"
+        width={150}
+        height={230}
+        src={`/assets/tds-${slug}.jpeg`}
+      />
       <span style={{ fontSize: "1.2rem" }}>{count}</span>
     </div>
   );

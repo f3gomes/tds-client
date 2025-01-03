@@ -123,7 +123,7 @@ function GameLobby({
               </button>
             </div>
           ) : (
-            <p>Waiting for the host to start the game</p>
+            <p>Aguardando inicio do jogo...</p>
           )}
         </div>
       </ActionArea>

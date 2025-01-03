@@ -19,13 +19,23 @@ function GameDistribution({
     <>
       {player.role && <RoleOverview role={player.role} />}
       <SetupOverview nPlayers={nPlayers} />
-      <div style={{ width: "100%" }}>
+      <div className="flex flex-col gap-2 justify-center items-center mt-4">
+        <button
+          onClick={onBackToGame}
+          className="bg-white text-black px-4 py-1 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 hover:shadow-md transition-all duration-200"
+        >
+          Jogar
+        </button>
+
         {player.isHost && (
-          <button color="red" onClick={onGameReset}>
-            Reset game
+          <button
+            color="red"
+            onClick={onGameReset}
+            className="bg-white text-black px-4 py-1 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 hover:shadow-md transition-all duration-200"
+          >
+            Reiniciar
           </button>
         )}
-        <button onClick={onBackToGame}>Back to game</button>
       </div>
     </>
   );

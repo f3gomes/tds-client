@@ -47,19 +47,19 @@ function GameArea({ game, gameOverReason, player, onCardClick }: Props) {
 
   const headlineMessage = gameOverReason
     ? gameOverReason === GameOverReason.ALL_GOLD_FLIPPED
-      ? "Adventurers win!"
-      : "Guardians win!"
+      ? "Os aventureiros venceram!"
+      : "Os guardiões venceram!"
     : isKeyholder
-      ? "You have the key."
-      : `${keyholder.name} has the key.`;
+      ? "Você tem a chave."
+      : `${keyholder.name} tem a chave.`;
 
   const subheadlineMessage = gameOverReason ? (
     gameOverReason + "!"
   ) : getIsRoundComplete(game) ? (
     player.isHost ? (
-      "Please start the next round."
+      "Por favor incie a próxima rodada."
     ) : (
-      "Waiting for host to start the next round."
+      "Aguardando início da próxima rodada."
     )
   ) : (
     <>

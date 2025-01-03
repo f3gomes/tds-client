@@ -1,13 +1,12 @@
 import React from "react";
 
 interface ModalProps {
-  isOpen: boolean | undefined;
   onClose: () => void;
-  title: string;
+  isOpen: boolean | undefined;
   children: React.ReactNode;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
   return (
@@ -19,13 +18,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
       />
 
       {/* Modal */}
-      <div className="relative z-50 w-full max-w-lg rounded-lg bg-white p-6 shadow-xl">
+      <div className="relative z-50 w-full max-w-lg rounded-lg bg-black p-6 shadow-xl">
         {/* Header */}
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold">{title}</h2>
+        <div className="flex items-center justify-between absolute right-2 top-2">
           <button
             onClick={onClose}
-            className="rounded-full p-1 hover:bg-gray-100"
+            className="rounded-full p-1 hover:bg-gray-100 hover:text-black transition-all duration-200"
           >
             <svg
               className="h-6 w-6"
