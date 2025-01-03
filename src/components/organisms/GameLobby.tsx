@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-
 import { useCopyToClipboard } from "react-use";
 import styled from "styled-components";
 import { gameLobbyReadiness } from "../../selectors/game";

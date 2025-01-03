@@ -20,6 +20,7 @@ export default function Game({
   params: Promise<{ gameId: string }>;
 }) {
   const { gameId } = use(params);
+  // eslint-disable-next-line
   const socket: any = useSocket();
   const socketAliases = useSocketAliases();
 
@@ -33,7 +34,7 @@ export default function Game({
   );
 
   if (game.data?.status === GameStatus.ONGOING && !player.data) {
-    return <p>Can't join a game that is underway - sorry</p>;
+    return <p>Não é possível entrar em um jogo já iniciado.</p>;
   } else if (
     !game.data?.players[player.data?.socketId ?? ""] &&
     takenNames.length >= 10

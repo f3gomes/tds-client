@@ -18,7 +18,6 @@ export interface CardFlipProps {
   onClickFront?(): void;
   onClickBack?(): void;
   onFlipComplete?(): void;
-  // onAnimationComplete?(isFlippedUp: boolean): void;
   rotate?: number;
 }
 
@@ -41,7 +40,6 @@ function CardFlipWithRef(
   {
     className,
     children,
-    disabled,
     style,
     styles,
     back,
@@ -49,10 +47,6 @@ function CardFlipWithRef(
     onClick,
     onClickFront,
     onClickBack,
-    onFlipComplete,
-    // onAnimationComplete,
-    isFlippedUp,
-    rotate: rotation = 0,
   }: CardFlipProps,
   ref: React.ForwardedRef<HTMLDivElement>
 ): JSX.Element {
@@ -72,11 +66,7 @@ function CardFlipWithRef(
     <div
       className="card-back"
       onClick={() => onClickBack && onClickBack()}
-      style={{
-        ...styles?.cardFrame,
-        // rotateY: "180deg",
-        // display: opacity.to((v) => (v === 1 ? "none" : "block")),
-      }}
+      style={{ ...styles?.cardFrame }}
     >
       {back}
     </div>

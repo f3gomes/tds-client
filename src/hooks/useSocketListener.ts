@@ -8,11 +8,11 @@ export default function useSocketListener<
   const socket = useSocket();
 
   useEffect(() => {
-    // @ts-ignore
+    // @ts-expect-error
     socket.on(event, listener);
 
     return function cleanup() {
-      // @ts-ignore
+      // @ts-expect-error
       socket.off(event, listener);
     };
   });

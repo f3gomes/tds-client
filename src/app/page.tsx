@@ -13,34 +13,33 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Home() {
+  // eslint-disable-next-line
   const socket: any = useSocket();
   const history = useRouter();
 
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingGame, setIsLoadingGame] = useState(false);
 
+  console.log(isLoading);
+
   useSocketListener(ServerEvent.GAME_CREATED, (data) => {
     history.push(`/game/${data.id}`);
   });
 
   const handleNewGame = () => {
+    setIsLoadingGame(true);
+
     try {
-      setIsLoadingGame(true);
       const data: CreateGameEvent = {
         socketId: socket.id,
       };
+
       socket.emit(ClientEvent.CREATE_GAME, data);
     } catch (error) {
       console.log(error);
     } finally {
       setIsLoadingGame(false);
     }
-  };
-
-  const handleJoinGame = () => {
-    window.alert(
-      "This isn't implemented yet - get the join link from your host!"
-    );
   };
 
   useEffect(() => {
@@ -83,7 +82,7 @@ export default function Home() {
           </>
         ) : (
           <p className="text-lg">
-            Um jogo rápido que combina dedução social cooperativa Com blefe,
+            Um jogo rápido que combina dedução social cooperativa com blefe,
             sorte e acaso.
           </p>
         )}

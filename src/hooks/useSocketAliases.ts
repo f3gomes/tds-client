@@ -20,6 +20,7 @@ function useSocketAliases() {
       initialized.current = true;
       setSocketAliases([...socketAliases, socket.id]);
     }
+    // eslint-disable-next-line
   }, [socket.id]);
 
   return socketAliases;

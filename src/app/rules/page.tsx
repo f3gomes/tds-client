@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 function GameRules() {
   return (
     <main className="bg-slate-800 flex flex-col gap-6">
@@ -8,15 +10,16 @@ function GameRules() {
           <strong>Bem-vindo ao Templo dos Horrores</strong>
         </p>
 
-        <img
+        <Image
+          width={150}
+          height={230}
+          src="/assets/tds-box.png"
           alt="Tempel des Schreckens box art"
-          src="./assets/tds-box.png"
-          width="150"
         />
       </div>
 
       <div>
-        <h2 id="tematic-setup"> Configuração Temática </h2>
+        <h2 className="font-bold"> Configuração Temática </h2>
 
         <p>
           Durante décadas, os rumores se espalharam sobre um templo oculto de
@@ -43,7 +46,7 @@ function GameRules() {
       </div>
 
       <div>
-        <h3> Funções e equipes ocultas </h3>
+        <h3 className="font-bold">Funções e equipes ocultas </h3>
 
         <p>
           Em <em> tempel des schreckens </em>, {""}
@@ -123,7 +126,7 @@ function GameRules() {
       </div>
 
       <div>
-        <h3> Dinâmica básica da equipe </h3>
+        <h3 className="font-bold">Dinâmica básica da equipe </h3>
 
         <p>
           Aventureiros estão em uma corrida contra o tempo para encontrar todo o
@@ -151,8 +154,10 @@ function GameRules() {
         </p>
 
         <h2 id="mecânica de jogo"> mecânica de jogo </h2>
+      </div>
 
-        <h3> Cartões de câmara </h3>
+      <div>
+        <h3 className="font-bold"> Cartões de câmara </h3>
 
         <p>
           O <em> tempel des schreckens </em> está organizado em distinto
@@ -170,35 +175,39 @@ function GameRules() {
       <div>
         <div style={{ display: "flex", justifyContent: "space-around" }}>
           <div style={{ width: 150 }}>
-            <img
+            <Image
+              width={150}
+              height={230}
+              src="/assets/tds-chamber.jpeg"
               alt="Tempel des Schreckens - unopened chamber"
-              src="./assets/tds-chamber.jpeg"
-              width="150"
             />
             <p>Unknown chamber (unopened, back)</p>
           </div>
 
           <div style={{ width: 150 }}>
-            <img
+            <Image
               alt="Tempel des Schreckens - gold chamber"
-              src="./assets/tds-gold.jpeg"
-              width="150"
+              src="/assets/tds-gold.jpeg"
+              width={150}
+              height={230}
             />
             <p>Gold chamber (opened, front)</p>
           </div>
           <div style={{ width: 150 }}>
-            <img
+            <Image
+              width={150}
+              height={230}
+              src="/assets/tds-fire.jpeg"
               alt="Tempel des Schreckens - fire chamber"
-              src="./assets/tds-fire.jpeg"
-              width="150"
             />
             <p>Fire chamber (opened, front)</p>
           </div>
           <div style={{ width: 150 }}>
-            <img
+            <Image
+              width={150}
+              height={230}
+              src="/assets/tds-empty.jpeg"
               alt="Tempel des Schreckens - empty chamber"
-              src="./assets/tds-empty.jpeg"
-              width="150"
             />
             <p>Empty chamber (opened, front)</p>
           </div>
@@ -246,230 +255,238 @@ function GameRules() {
       </div>
 
       <div>
-        <h3>Round mechanics</h3>
+        <h3> mecânica redonda </h3>
 
         <p>
-          Roles are randomly assigned before the first round, and then kept for
-          the whole game.
+          As funções são designadas aleatoriamente antes da primeira rodada e
+          depois mantidas para Todo o jogo.
         </p>
 
-        <p>Every round works in the same basic way:</p>
+        <p> Cada rodada funciona da mesma maneira básica: </p>
         <ul>
           <li>
-            <a href="#round-setup">
-              <em>Setup</em>
+            <a href="#redonda">
+              <em> Configuração </em>
             </a>
-            , where cards are dealt out to represent the temple's chambers; and
+            , onde os cartões são tratados para representar as câmaras do
+            templo;e
           </li>
           <li>
-            <a href="#discussion">
-              <em>Discussion</em>
+            <a href="#discussão">
+              <em> discussão </em>
             </a>
-            , where players reveal information (truthfully or not...); and
+            , onde os jogadores revelam informações (sinceramente ou não ...);e
           </li>
           <li>
-            <a href="#opening-cards">
-              <em>Opening cards</em>
+            <a href="#de abertura">
+              <em> Abertura de cartões </em>
             </a>
-            , where cards are flipped over to represent exploring the temple.
+            , onde os cartões são invertidos para representar a exploração do
+            templo.
           </li>
         </ul>
 
         <p>
-          For an <em>N</em> player game, a round involves opening <em>N</em>{" "}
-          chambers. (For example, in a 6 player game, every round invovles
-          flipping over 6 face-down chamber cards.)
+          Para um jogo de jogador <em> n </em>, uma rodada envolve a abertura{" "}
+          <em> n </em> {""}
+          Câmaras.(Por exemplo, em um jogo de 6 jogadores, a cada redonda
+          invadida virando mais de 6 cartões de câmara voltados para baixo.)
         </p>
 
         <p>
-          Discussion and Opening cards can happen in parallel, until all cards
-          have been opened from the round.
+          Discussão e abertura de cartões podem acontecer em paralelo, até que
+          todas as cartas foram abertos da rodada.
         </p>
 
-        <h4 id="round-setup">Round setup</h4>
+        <h4 id="redond-setup"> configuração redonda </h4>
 
         <p>
-          Firstly, <strong>un-opened Chamber cards are dealt out evenly</strong>{" "}
-          to each player. (Cards that are 'opened' in previous rounds are not
-          dealt in subsequent rounds.)
-        </p>
-
-        <p>
-          Secondly,{" "}
-          <strong>each player sees their own Chamber card distribution</strong>.
-          For example, a player dealt 5 x Chamber cards might see their
-          distribution such as:
-        </p>
-        <ul>
-          <li>2 Gold, 1 Fire, 2 Empty</li>
-          <li>3 Gold, 2 Empty (0 Fire)</li>
-          <li>5 Empty (0 Gold, 0 Fire)</li>
-        </ul>
-
-        <p>
-          Thirdly,{" "}
+          Primeiramente,{" "}
           <strong>
-            each player shuffles their Chamber cards and places them face-down
+            Cartões de câmara não abertos são tratados uniformemente
+          </strong>{" "}
+          para cada jogador.(Cartões que são abertos nas rodadas anteriores não
+          são lidou nas rodadas subsequentes.)
+        </p>
+
+        <p>
+          Em segundo lugar, {""}
+          <strong>
+            {" "}
+            Cada jogador vê sua própria distribuição de cartas de câmara{" "}
           </strong>
-          . This means that they know their card <em>distribution</em>, but not{" "}
-          <em>placement</em>. For example, if they have 2 Gold cards amongst 5
-          unopened Chambers, they will know that each of these face-down Chamber
-          cards has a 2/5 probability of being Gold - but they won't know{" "}
-          <em>which</em> face-down Chamber cards <em>is actually</em> Gold.
+          . Por exemplo, um jogador que negociou 5 x cartas de câmara pode ver
+          seu distribuição como:
+        </p>
+        <ul>
+          <li> 2 ouro, 1 incêndio, 2 vazio </li>
+          <li> 3 ouro, 2 vazio (0 fogo) </li>
+          <li> 5 vazios (0 ouro, 0 fogo) </li>
+        </ul>
+
+        <p>
+          Terceiro, {""}
+          <strong>
+            Cada jogador embaralha suas cartas de câmara e as coloca de bruços
+          </strong>
+          .Isso significa que eles conhecem o cartão <em> distribuição </em>,
+          mas não {""}
+          <em> posicionamento </em>.Por exemplo, se eles tiverem 2 cartões de
+          ouro entre 5 Câmaras fechadas, eles saberão que cada uma dessas câmara
+          de frente para baixo Os cartões têm uma probabilidade 2/5 de ser ouro
+          - mas eles não saberão {""}
+          <em> que </em> Cartões de câmara de frente para baixo{" "}
+          <em> é na verdade </em> ouro.
         </p>
       </div>
 
       <div>
         <h4 id="discussion">Discussion</h4>
-
         <p>
-          Adventurers will <em>generally</em> want to maximise the number of
-          Gold chambers flipped, as this helps them towards their win condition.
-          Guardians, however, have different incentives...
+          Os aventureiros <em> geralmente </em> desejam maximizar o número de As
+          câmaras de ouro caíram, pois isso as ajuda a sua condição de vitória.
+          Guardiões, no entanto, têm incentivos diferentes ...
         </p>
-
         <p>
-          Before any chambers are opened, it is <em>typical play</em> for all
-          players to share information about their distributions, to help input
-          on which chamber should be opened. For example:
+          Antes que qualquer câmaras seja aberta, é <em> típico jogo </em> para
+          todos jogadores para compartilhar informações sobre suas
+          distribuições, para ajudar a inserir em que câmara deve ser aberta.Por
+          exemplo:
         </p>
         <ul>
           <li>
-            "In my four cards, I have 3 Gold and 1 Empty - odds are good here!"
+            <i>
+              Nos meus quatro cartões, tenho 3 ouro e 1 vazio - as
+              probabilidades são boas aqui!
+            </i>
           </li>
           <li>
-            "Ah, so in my four cards I have 1 Gold, 1 Fire and 2 Empty -
-            probably best to look elsewhere."
+            <i>
+              Ah, então nas minhas quatro cartas, tenho 1 ouro, 1 incêndio e 2
+              vazias - Provavelmente melhor procurar em outro lugar.
+            </i>
           </li>
         </ul>
-
         <p>
           <em>
-            (There is no rule about declaring your cards in this way - it is
-            simply common play. Adventurers have an interest in sharing
-            information so that they can try to maximise the Gold cards they
-            flip, and Guardians have an interest in pretending to be
-            Adventurers, spreading misinformation and influencing the
-            Adventurers.)
+            (Não há regra sobre declarar seus cartões dessa maneira - é
+            simplesmente jogo comum.Aventureiros têm interesse em compartilhar
+            informações para que eles possam tentar maximizar os cartões de ouro
+            que eles flip e guardiões têm interesse em fingir ser Aventureiros,
+            espalhando desinformação e influenciando o Aventureiros.)
           </em>
         </p>
-
         <p>
-          However, just like role assignment,{" "}
-          <em>individual chamber distributions are secret</em> - which means
-          that there's an element of deduction, since some people may be
-          bluffing about what they have.
+          No entanto, assim como a atribuição de função, {""}
+          <em> distribuições de câmara individuais são secretas </em> - o que
+          significa que há um elemento de dedução, já que algumas pessoas podem
+          ser blefando sobre o que eles têm.
         </p>
-
         <p>
-          (For example: a Guardian sitting on lots of Gold might artificially
-          inflate their Fire count, to try to protect their Gold; conversely, a
-          Guardian sitting on Fire might artificially inflate their Gold count,
-          to try to draw the Adventurers towards the Fire. See{" "}
+          (Por exemplo: um guardião sentado em muito ouro pode artificialmente
+          inflar sua contagem de incêndios, para tentar proteger seu ouro;Por
+          outro lado, a Guardião sentado em chamas pode inflar artificialmente
+          sua contagem de ouro, tentar atrair os aventureiros para o fogo.Ver{" "}
           <a href="STRATEGY.md">Strategy</a> for more.)
         </p>
-
         <p>
-          So, in a game, there are two (related) types of deduction that happen:
+          Então, em um jogo, existem dois tipos de dedução (relacionados) que
+          acontecem:
         </p>
+        F
         <ol>
           <li>
-            <em>Chamber distribution</em> - e.g. where are the Fire cards in
-            this round?
+            <em> Distribuição da câmara </em> - p.Onde estão os cartões de fogo
+            esta rodada?
           </li>
           <li>
-            <em>Role distribution</em> - e.g. who are the Guardians in this
-            game?
+            <em> Distribuição de função </em> - p.quem são os guardiões neste
+            jogo?
           </li>
         </ol>
-
         <p>
-          (Remember: <strong>roles are kept between rounds</strong>, so deducing
-          that somebody is a Guardian in one round will help you in a future
-          round.)
+          (Lembre -se: <strong> papéis são mantidos entre as rodadas </strong>,
+          então deduzindo que alguém é um guardião em uma rodada o ajudará em um
+          futuro redondo.)
         </p>
-
-        <h4 id="opening-cards">Opening cards</h4>
-
+        <h4 id="Abertura-cards"> Cartões de abertura </h4>
         <p>
-          It is usual for there to be player discussion over which chambers to
-          visit. For example:
+          É comum haver discussões de jogadores sobre quais câmaras para
+          visita.Por exemplo:
         </p>
         <ul>
           <li>
-            "So, Aaliya says she has three Gold in her five cards - which means
-            odds are best there, let's open one of her chambers!"
+            <i>
+              Então, Aaliya diz que tem três ouro em suas cinco cartas - o que
+              significa As probabilidades são melhores lá, vamos abrir uma de
+              suas câmaras!
+            </i>
           </li>
           <li>
-            "Hmm, I'm not sure I trust Aaliya. However, Carlo has proved himself
-            reliable - so I trust him when he says there are two Gold there."
+            <i>
+              Hmm, não tenho certeza se confio em Aaliya. No entanto, Carlo
+              provou Confiável - então eu confio nele quando ele diz que há dois
+              ouro lá.
+            </i>
           </li>
           <li>
-            "No, don't chance it with Carlo, he says he has Fire, we can't risk
-            that!"
+            <i>
+              Não, não acabe com Carlo, ele diz que tem fogo, não podemos
+              arriscar que!
+            </i>
           </li>
         </ul>
-
         <p>
-          <em>etcetera</em>
+          <em> etc </em>
         </p>
-
         <p>
-          However, one player has the final say over which chamber to open - the{" "}
-          <strong>Keyholder</strong>, a <em>temporary role</em> which passes
-          between players (through a mechanic described below). The first
-          Keyholder is randomly assigned at the start of the game.
+          No entanto, um jogador tem a palavra final sobre qual câmara abrir - o{" "}
+          <strong>Keyholder</strong>, um papel temporário que passa entre
+          jogadores (através de um mecânico descrito abaixo).O primeiro O
+          Keyholder é designado aleatoriamente no início do jogo.
         </p>
-
         <p>
-          The Keyholder ultimately has the final say on which Chamber to open
-          (i.e. which card to flip) - they can choose to go with the discussion
-          consensus, or they can choose to ignore it entirely.
+          O detentor de chave finalmente tem a palavra final sobre qual câmara
+          abrir (isto é, qual cartão virar) - eles podem optar por ir com a
+          discussão consenso, ou eles podem optar por ignorá -lo completamente.
         </p>
-
         <p>
-          (The Keyholder{" "}
-          <strong>cannot choose to open one of their own Chambers</strong>,
-          however.)
+          (O Keyholder {""}
+          <strong>
+            {" "}
+            não pode optar por abrir uma de suas próprias câmaras{" "}
+          </strong>
+          , no entanto.)
         </p>
-
         <p>
-          Once the Keyholder picks a Chamber to open, it is flipped, and
-          everybody learns what it was - and{" "}
-          <strong>the key passes to the person whose Chamber was opened</strong>
-          , making them the next Keyholder.
+          Uma vez que o proprietário escolhe uma câmara para abrir, ela é
+          invertida e Todo mundo aprende o que era - e {""}
+          <strong> A chave passa para a pessoa cuja câmara foi aberta </strong>,
+          tornando -os o próximo detentor -chave.
         </p>
-
         <p>
-          This process of <em>discussion</em>, <em>opening cards</em> and{" "}
-          <em>passing the key</em> continues until <em>N</em> cards have been
-          flipped, where <em>N</em> is the number of players in the game.
+          Este processo de <em> discussão </em>,{" "}
+          <em> de abertura de cartões </em> e {""}
+          <em> Passando a chave </em> continua até que os cartões <em> n </em>
+          Virado, onde <em> n </em> é o número de jogadores do jogo.
         </p>
-
         <p>
-          (This need not be equally distributed between players - for example,
-          the key might pass from Player A, to Player B, back to Player A, to
-          Player C, then to Player D.)
+          (Isso não precisa ser igualmente distribuído entre os jogadores - por
+          exemplo, A chave pode passar do jogador A, para o jogador B, de volta
+          ao jogador A, para Jogador C, então para o jogador D.)
         </p>
-
         <p>
-          The person who holds the key at the end of a round holds onto it for
-          the start of the next round.
+          A pessoa que segura a chave no final de uma rodada se mantém o início
+          da próxima rodada.
         </p>
-
         <p>
-          Play continues until one of the{" "}
-          <a href="#team-win-conditions">team win conditions</a> has been
-          reached.
+          O jogo continua até um dos {""}
+          <a href="#team-win-conditions">
+            As condições de vitória da equipe{" "}
+          </a>{" "}
+          foram alcançado.
         </p>
-
         <h2>Get started</h2>
-
-        <p>
-          So, are you ready to enter the{" "}
-          <a href="https://tempel.rcr.dev/">Tempel des Schreckens</a>?
-        </p>
-
         <p>
           The game is best played with the{" "}
           <a href="https://www.spiel-des-jahres.de/en/games/tempel-des-schreckens/">
@@ -477,11 +494,10 @@ function GameRules() {
           </a>
           .
         </p>
-
         <p>
-          If you can't play with a physical set - e.g. for remote play on group
-          video calls - you can use this web app implementation, which uses
-          identical rules.
+          Se você não pode brincar com um conjunto físico - por exemplopara jogo
+          remoto no grupo chamadas de vídeo - você pode usar esta implementação
+          de aplicativos da web, que usa regras idênticas.
         </p>
       </div>
     </main>

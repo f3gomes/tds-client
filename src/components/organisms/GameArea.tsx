@@ -27,6 +27,7 @@ function GameArea({ game, gameOverReason, player, onCardClick }: Props) {
     }
   };
 
+  // eslint-disable-next-line
   const { [player.socketId]: ownCards, ...otherPlayerCards } =
     getPlayerCardsInRound(game);
 
