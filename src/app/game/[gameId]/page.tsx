@@ -39,7 +39,7 @@ export default function Game({
     !game.data?.players[player.data?.socketId ?? ""] &&
     takenNames.length >= 10
   ) {
-    return <p>The game is full (10 players max) - sorry</p>;
+    return <p>Esse jogo está lotado (Limite: 10 jogadores)</p>;
   } else if (!player.loading && !player.data?.name) {
     return (
       <div className="flex flex-col justify-center items-center gap-2">
@@ -84,18 +84,28 @@ export default function Game({
                   idx,
                   card
                 );
+
+                setTimeout(() => {
+                  switch (card.type) {
+                    case CardType.EMPTY:
+                      return sounds.playRevealEmptySound();
+                    case CardType.FIRE:
+                      return sounds.playRevealFireSound();
+                    case CardType.GOLD:
+                      return sounds.playRevealGoldSound();
+                  }
+                }, 4000);
               }
             }}
             onFlipComplete={(card): void => {
-              switch (card.type) {
-                case CardType.EMPTY:
-                  console.log(CardType.EMPTY);
-                  return sounds.playRevealEmptySound();
-                case CardType.FIRE:
-                  return sounds.playRevealFireSound();
-                case CardType.GOLD:
-                  return sounds.playRevealGoldSound();
-              }
+              // switch (card.type) {
+              //   case CardType.EMPTY:
+              //     return sounds.playRevealEmptySound();
+              //   case CardType.FIRE:
+              //     return sounds.playRevealFireSound();
+              //   case CardType.GOLD:
+              //     return sounds.playRevealGoldSound();
+              // }
             }}
             onGameRestart={() => {
               socket.emit(ClientEvent.RESET_GAME, game.data!.id);

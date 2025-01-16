@@ -4,9 +4,9 @@ export enum GameStatus {
 }
 
 export enum GameOverReason {
-  ALL_GOLD_FLIPPED = "The adventurers found all the gold",
-  ALL_FIRE_FLIPPED = "The adventurers ran into all the fire",
-  ALL_ROUNDS_FINISHED = "The adventurers lost on time",
+  ALL_GOLD_FLIPPED = "Os aventureiros encontraram todos os tesouros",
+  ALL_FIRE_FLIPPED = "Os aventureiros caíram em todas as armadilhas",
+  ALL_ROUNDS_FINISHED = "Os aventureiros não conseguiram encontrar todos os tesouros",
 }
 
 export enum CardType {
