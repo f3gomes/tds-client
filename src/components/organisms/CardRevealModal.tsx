@@ -95,7 +95,7 @@ function CardReveal({
           width={195}
           height={300}
           alt="card-back"
-          src="/assets/tds-chamber.jpeg"
+          src="/assets/tds-chamber.png"
         />
       }
       isFlippedUp={isFlipped}
@@ -106,7 +106,7 @@ function CardReveal({
           width={195}
           height={300}
           alt="card-front"
-          src={`/assets/tds-${cardType}.jpeg`}
+          src={`/assets/tds-${cardType}.png`}
         />
       }
     />

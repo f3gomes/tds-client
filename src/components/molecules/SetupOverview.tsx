@@ -38,7 +38,7 @@ export function CardOverview({
         alt="asset"
         width={150}
         height={230}
-        src={`/assets/tds-${slug}.jpeg`}
+        src={`/assets/tds-${slug}.png`}
       />
       <span style={{ fontSize: "1.2rem" }}>{count}</span>
     </div>

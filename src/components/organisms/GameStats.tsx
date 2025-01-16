@@ -30,9 +30,9 @@ function GameStats({
   const remaining = getRemainingTypeCount(game);
 
   return (
-    <Container className="active-contents flex-between">
-      <div style={{ width: "100%" }}>
-        <h2>Round {game.rounds.length} of 4</h2>
+    <Container className="flex flex-col gap-2">
+      <div>
+        <h2>Rodada {game.rounds.length} de 4</h2>
 
         {/* info={!gameOverReason} warning={!!gameOverReason} */}
         <div>
@@ -40,21 +40,21 @@ function GameStats({
             {gameOverReason
               ? gameOverReason + "!"
               : roundFlippedCards.length === 0
-                ? "A new round has started!"
-                : "The round is ongoing!"}
+                ? "Uma nova rodada foi iniciada!"
+                : "A rodada está em andamento!"}
           </p>
         </div>
 
-        <h3>Round stats</h3>
-        <table>
+        <table className="border-separate border-spacing-2">
           <thead>
             <tr>
-              <th>Round</th>
-              <th>Gold</th>
-              <th>Fire</th>
-              <th>Empty</th>
+              <th>Rodada</th>
+              <th>Ouro</th>
+              <th>Vazio</th>
+              <th>Armadilha</th>
             </tr>
           </thead>
+
           <tbody>
             {game.rounds.map((round, idx) => {
               const cardsFlipped = findFlippedCardsFromRound(
@@ -68,33 +68,43 @@ function GameStats({
                 >
                   <td>{round.number}</td>
                   <td>{countCardType(cardsFlipped, CardType.GOLD)}</td>
-                  <td>{countCardType(cardsFlipped, CardType.FIRE)}</td>
                   <td>{countCardType(cardsFlipped, CardType.EMPTY)}</td>
+                  <td>{countCardType(cardsFlipped, CardType.FIRE)}</td>
                 </tr>
               );
             })}
             <tr className="active">
               <td>Total</td>
               <td>{flippedCount.nGold}</td>
-              <td>{flippedCount.nFire}</td>
               <td>{flippedCount.nEmpty}</td>
+              <td>{flippedCount.nFire}</td>
             </tr>
             <tr className="active">
-              <td>Left</td>
+              <td>Restante</td>
               <td>{remaining.nGold}</td>
-              <td>{remaining.nFire}</td>
               <td>{remaining.nEmpty}</td>
+              <td>{remaining.nFire}</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div style={{ width: "100%" }}>
+
+      <div className="flex gap-2 mt-3">
         {isHost && (
-          <button color="red" onClick={onGameReset}>
+          <button
+            color="red"
+            onClick={onGameReset}
+            className="bg-white text-black px-4 py-1 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 hover:shadow-md transition-all duration-200"
+          >
             Reset game
           </button>
         )}
-        <button onClick={onBackToGame}>Back to game</button>
+        <button
+          onClick={onBackToGame}
+          className="bg-white text-black px-4 py-1 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 hover:shadow-md transition-all duration-200"
+        >
+          Back to game
+        </button>
       </div>
     </Container>
   );

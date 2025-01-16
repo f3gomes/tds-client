@@ -19,7 +19,7 @@ function PlayerNamer({ handleSetName, takenNames }: Props) {
   };
 
   return (
-    <div className="flex flex-col gap-2 mt-4">
+    <div className="flex flex-col gap-2 w-full h-screen justify-center items-center">
       <input
         value={inputText}
         placeholder="Digite seu nome"
@@ -30,7 +30,7 @@ function PlayerNamer({ handleSetName, takenNames }: Props) {
       />
       <button
         onClick={handleSetClick}
-        className="bg-white text-black px-4 py-1 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 hover:shadow-md transition-all duration-200"
+        className="bg-white text-black px-4 py-1 w-[223px] rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 hover:shadow-md transition-all duration-200"
       >
         Confirmar
       </button>

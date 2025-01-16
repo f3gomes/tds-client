@@ -17,7 +17,7 @@ function CardPreview({ cardType, n }: Props) {
           width={150}
           height={230}
           alt={cardType}
-          src={`/assets/tds-${cardType}.jpeg`}
+          src={`/assets/tds-${cardType}.png`}
           className={cn(
             "border-2 border-solid",
             cardType === "fire"

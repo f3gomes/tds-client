@@ -178,7 +178,7 @@ function GameRules() {
             <Image
               width={150}
               height={230}
-              src="/assets/tds-chamber.jpeg"
+              src="/assets/tds-chamber.png"
               alt="Tempel des Schreckens - unopened chamber"
             />
             <p>Unknown chamber (unopened, back)</p>
@@ -187,7 +187,7 @@ function GameRules() {
           <div style={{ width: 150 }}>
             <Image
               alt="Tempel des Schreckens - gold chamber"
-              src="/assets/tds-gold.jpeg"
+              src="/assets/tds-gold.png"
               width={150}
               height={230}
             />
@@ -197,7 +197,7 @@ function GameRules() {
             <Image
               width={150}
               height={230}
-              src="/assets/tds-fire.jpeg"
+              src="/assets/tds-fire.png"
               alt="Tempel des Schreckens - fire chamber"
             />
             <p>Fire chamber (opened, front)</p>
@@ -206,7 +206,7 @@ function GameRules() {
             <Image
               width={150}
               height={230}
-              src="/assets/tds-empty.jpeg"
+              src="/assets/tds-empty.png"
               alt="Tempel des Schreckens - empty chamber"
             />
             <p>Empty chamber (opened, front)</p>

@@ -13,7 +13,7 @@ function RoleOverview({ role }: Props) {
           width={195}
           height={300}
           alt="asset"
-          src={`/assets/tds-${role.toLowerCase()}.jpeg`}
+          src={`/assets/tds-${role.toLowerCase()}.png`}
         />
 
         <p className="text-2xl">{role}</p>

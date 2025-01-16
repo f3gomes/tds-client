@@ -12,13 +12,7 @@ interface Props {
   player: Player;
 }
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-`;
+const Container = styled.div``;
 
 const ActionArea = styled.div`
   width: 100%;
@@ -62,7 +56,7 @@ function GameLobby({
   const disableStart = !readiness.isReady;
 
   return (
-    <Container className="active-contents flex gap-6">
+    <Container className="flex flex-col h-screen justify-center items-center gap-3">
       <div className="flex flex-col gap-2">
         <h1 style={{ textAlign: "center" }}>Game ID: {game.id}</h1>
 
@@ -101,6 +95,7 @@ function GameLobby({
           }}
         />
       </div>
+
       <ActionArea>
         <div className="flex flex-col gap-2">
           {!readiness.isReady && (

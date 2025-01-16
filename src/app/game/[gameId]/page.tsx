@@ -42,7 +42,7 @@ export default function Game({
     return <p>The game is full (10 players max) - sorry</p>;
   } else if (!player.loading && !player.data?.name) {
     return (
-      <div className="p-2 flex flex-col justify-center items-center gap-2">
+      <div className="flex flex-col justify-center items-center gap-2">
         <PlayerNamer
           handleSetName={(name) => {
             if (player.data) {
@@ -87,9 +87,9 @@ export default function Game({
               }
             }}
             onFlipComplete={(card): void => {
-              console.log(card.type);
               switch (card.type) {
                 case CardType.EMPTY:
+                  console.log(CardType.EMPTY);
                   return sounds.playRevealEmptySound();
                 case CardType.FIRE:
                   return sounds.playRevealFireSound();

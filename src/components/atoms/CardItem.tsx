@@ -17,7 +17,7 @@ function CardItem({ card, onClick, style }: Props) {
         height={230}
         alt="card"
         onClick={() => onClick && onClick(card)}
-        src={`/assets/tds-${imageSlug}.jpeg`}
+        src={`/assets/tds-${imageSlug}.png`}
       />
     </div>
   );

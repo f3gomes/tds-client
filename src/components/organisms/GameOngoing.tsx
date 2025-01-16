@@ -98,7 +98,7 @@ function GameOngoing({
   });
 
   return (
-    <Container className="active-contents flex-between">
+    <Container>
       <CardRevealModal
         {...cardFlipModal}
         onClose={handleCloseModal}
@@ -137,7 +137,6 @@ function GameOngoing({
                   )
                 : onCardClick
             }
-
             gameOverReason={gameOverReason}
           />
           <div className="flex flex-col gap-2">
@@ -154,7 +153,7 @@ function GameOngoing({
                 disabled={
                   !(player.isHost && (isRoundComplete || gameOverReason))
                 }
-                className="btn-default"
+                className="btn-default disabled:opacity-60"
               >
                 {gameOverReason ? "Novo Jogo" : "Próxima Rodada"}
               </button>

@@ -60,12 +60,10 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="flex flex-col justify-center items-center gap-3">
-        <h1 className="text-3xl">Templo dos Horrores</h1>
-
+    <div className="flex flex-col justify-center items-center h-screen">
+      <div className="flex flex-col">
         <div className="flex justify-center">
-          <Image src="/assets/tds-box.png" alt="box" width={494} height={630} />
+          <Image src="/assets/tds-box.png" alt="box" width={375} height={500} />
         </div>
 
         {isLoading ? (
@@ -79,14 +77,11 @@ export default function Home() {
             </div>
           </>
         ) : (
-          <p className="text-lg">
-            Um jogo rápido que combina dedução social cooperativa com blefe,
-            sorte e acaso.
-          </p>
+          <div></div>
         )}
       </div>
 
-      <div className="flex gap-3 mt-6">
+      <div className="flex gap-3 mt-4">
         <button
           onClick={handleNewGame}
           className="bg-white text-black px-4 py-1 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 hover:shadow-md transition-all duration-200"
