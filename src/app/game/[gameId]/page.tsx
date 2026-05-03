@@ -97,7 +97,7 @@ export default function Game({
                 }, 4000);
               }
             }}
-            onFlipComplete={(_card): void => {
+            onFlipComplete={(): void => {
               // switch (card.type) {
               //   case CardType.EMPTY:
               //     return sounds.playRevealEmptySound();
